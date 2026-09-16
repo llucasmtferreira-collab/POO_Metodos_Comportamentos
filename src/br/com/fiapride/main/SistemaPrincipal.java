@@ -1,42 +1,64 @@
 package br.com.fiapride.main;
 
 import java.util.Scanner;
-import br.com.fiapride.model.Garrafa;
+import br.com.fiapride.model.PetVirtual;
 
 public class SistemaPrincipal {
 
     public static void main(String[] args) {
 
-        Scanner leitor = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        Garrafa minhaGarrafa = new Garrafa();
+        PetVirtual pet = new PetVirtual();
 
-        minhaGarrafa.cor = "Azul";
-        minhaGarrafa.material = "Plástico";
-        minhaGarrafa.capacidadeEmMl = 500;
+        pet.nome = "Pixel";
+        pet.fome = 40;
+        pet.energia = 80;
 
-        System.out.print("Quanto deseja colocar na garrafa? ");
-        int quantidadeEncher = leitor.nextInt();
-        minhaGarrafa.encher(quantidadeEncher);
+        int opcao = -1;
 
-        System.out.print("Quanto deseja beber? ");
-        int quantidadeBeber = leitor.nextInt();
-        minhaGarrafa.beber(quantidadeBeber);
+        while (opcao != 0) {
 
+            System.out.println("\n--- PET VIRTUAL ---");
+            System.out.println("1 - Alimentar");
+            System.out.println("2 - Brincar");
+            System.out.println("3 - Ver status");
+            System.out.println("0 - Sair");
+            System.out.print("Escolha uma opção: ");
 
-        System.out.println("\n--- Testes válidos e inválidos ---");
+            opcao = scanner.nextInt();
 
-        Garrafa garrafaTeste = new Garrafa();
-        garrafaTeste.capacidadeEmMl = 500;
+            if (opcao == 1) {
 
-        // Testes válidos
-        garrafaTeste.encher(300);
-        garrafaTeste.beber(100);
+                System.out.print("Quanto deseja alimentar o " + pet.nome + "? ");
+                int quantidade = scanner.nextInt();
 
-        // Testes inválidos
-        garrafaTeste.encher(1000);
-        garrafaTeste.beber(9999);
+                pet.alimentar(quantidade);
 
-        leitor.close();
+            } else if (opcao == 2) {
+
+                System.out.print("Por quanto tempo deseja brincar com o " + pet.nome + "? ");
+                int tempo = scanner.nextInt();
+
+                pet.brincar(tempo);
+
+            } else if (opcao == 3) {
+
+                System.out.println("\n--- STATUS ---");
+                System.out.println("Nome: " + pet.nome);
+                System.out.println("Fome: " + pet.fome);
+                System.out.println("Energia: " + pet.energia);
+
+            } else if (opcao == 0) {
+
+                System.out.println("Até a próxima, " + pet.nome + "!");
+
+            } else {
+
+                System.out.println("Opção inválida!");
+            }
+        }
+
+        scanner.close();
     }
 }

@@ -1,44 +1,19 @@
-# Garrafa - Projeto FiapRide
+# PetVirtual - Projeto Pessoal de POO
 
-Projeto simples feito para praticar Programação Orientada a Objetos em Java.
+O projeto começou com o objeto Garrafa. A partir desta etapa, o objeto pessoal foi alterado para `PetVirtual` para continuar a evolução nas próximas aulas.
 
-A classe `Garrafa` representa uma garrafa de água do mundo real. Ela guarda algumas características da garrafa e também a quantidade de líquido que existe nela.
+A classe `PetVirtual` representa um bichinho virtual inspirado na ideia de um Tamagotchi.
 
 ## Atributos
-
-- `cor`: cor da garrafa
-- `material`: material da garrafa
-- `capacidadeEmMl`: capacidade máxima da garrafa
-- `nivelAtualMl`: quantidade de líquido que está na garrafa
+- `nome`: nome do pet
+- `fome`: nível de fome
+- `energia`: nível de energia
 
 ## Métodos
-
-### encher(int quantidade)
-
-Adiciona líquido na garrafa. O método não deixa colocar uma quantidade menor ou igual a zero e também não deixa ultrapassar a capacidade máxima.
-
-Exemplo:
-
-```java
-minhaGarrafa.encher(300);
-```
-
-### beber(int quantidade)
-
-Retira líquido da garrafa. O método não deixa usar uma quantidade menor ou igual a zero e também não deixa beber mais líquido do que existe na garrafa.
-
-Exemplo:
-
-```java
-minhaGarrafa.beber(100);
-```
+- `alimentar(int quantidade)`: diminui a fome e impede valores inválidos.
+- `brincar(int tempo)`: diminui a energia e aumenta a fome, mantendo os valores válidos.
 
 ## Testes
-
-Na classe `SistemaPrincipal` foram feitos testes com valores válidos e inválidos para verificar as regras dos métodos.
-
-## UML
-
-O diagrama da classe está na pasta `uml` e mostra os atributos e os métodos `encher` e `beber`.
+O programa principal executa testes válidos e inválidos para verificar as regras dos métodos.
 
 Autor: Lucas Mota - RM566670
