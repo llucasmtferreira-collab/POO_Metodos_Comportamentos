@@ -2,15 +2,60 @@
 
 A classe `PetVirtual` representa um bichinho virtual inspirado em um Tamagotchi.
 
-Nesta etapa foi aplicado encapsulamento: os atributos passaram a ser `private` e o acesso acontece por getters e setters.
+O projeto começou com o objeto Garrafa e depois foi alterado para PetVirtual para continuar a evolução nas aulas de Programação Orientada a Objetos.
 
-## Regras
-- o nome não pode ser vazio;
-- a fome deve ficar entre 0 e 100;
-- a energia deve ficar entre 0 e 100;
-- `alimentar` e `brincar` continuam protegendo o estado.
+## Atributos
 
-## Teste
-`TestePetVirtual.java` testa o uso normal e também tenta informar valores inválidos.
+- `nome`
+- `fome`
+- `energia`
+
+Os atributos são `private` para proteger o estado do objeto.
+
+## Construtor
+
+O PetVirtual recebe o nome no momento em que é criado:
+
+```java
+PetVirtual pet = new PetVirtual("Pixel");
+```
+
+O pet inicia com:
+
+- fome: 40
+- energia: 80
+
+## Métodos
+
+### alimentar(int quantidade)
+
+Diminui a fome do pet e impede valores inválidos.
+
+### brincar(int tempo)
+
+Diminui a energia e aumenta a fome do pet.
+
+### Getters e Setters
+
+Os getters permitem consultar os atributos.
+
+Os setters controlam as alterações e impedem:
+
+- nome vazio;
+- fome menor que 0 ou maior que 100;
+- energia menor que 0 ou maior que 100.
+
+## Sistema Principal
+
+O arquivo `SistemaPrincipal.java` possui um menu interativo:
+
+1. Alimentar
+2. Brincar
+3. Ver status
+0. Sair
+
+## Testes
+
+O arquivo `TestePetVirtual.java` testa os comportamentos do objeto e também tenta inserir valores inválidos para verificar se o encapsulamento está funcionando.
 
 Autor: Lucas Mota - RM566670

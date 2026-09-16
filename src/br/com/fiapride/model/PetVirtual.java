@@ -6,6 +6,12 @@ public class PetVirtual {
     private int fome;
     private int energia;
 
+    public PetVirtual(String nome) {
+        setNome(nome);
+        setFome(40);
+        setEnergia(80);
+    }
+
     public void alimentar(int quantidade) {
         if (quantidade <= 0) {
             System.out.println("Erro: a quantidade deve ser maior que zero!");

@@ -9,11 +9,7 @@ public class SistemaPrincipal {
 
         Scanner scanner = new Scanner(System.in);
 
-        PetVirtual pet = new PetVirtual();
-
-        pet.setNome("Pixel");
-        pet.setFome(40);
-        pet.setEnergia(80);
+        PetVirtual pet = new PetVirtual("Pixel");
 
         int opcao = -1;
 
@@ -23,7 +19,6 @@ public class SistemaPrincipal {
             System.out.println("1 - Alimentar");
             System.out.println("2 - Brincar");
             System.out.println("3 - Ver status");
-            System.out.println("4 - Testar proteção");
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
 
@@ -49,14 +44,6 @@ public class SistemaPrincipal {
                 System.out.println("Nome: " + pet.getNome());
                 System.out.println("Fome: " + pet.getFome());
                 System.out.println("Energia: " + pet.getEnergia());
-
-            } else if (opcao == 4) {
-
-                System.out.println("\n--- TESTANDO PROTEÇÃO ---");
-
-                pet.setFome(-20);
-                pet.setEnergia(150);
-                pet.setNome("");
 
             } else if (opcao == 0) {
 
