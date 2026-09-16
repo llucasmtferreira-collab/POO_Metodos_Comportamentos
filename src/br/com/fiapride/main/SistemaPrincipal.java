@@ -11,9 +11,9 @@ public class SistemaPrincipal {
 
         PetVirtual pet = new PetVirtual();
 
-        pet.nome = "Pixel";
-        pet.fome = 40;
-        pet.energia = 80;
+        pet.setNome("Pixel");
+        pet.setFome(40);
+        pet.setEnergia(80);
 
         int opcao = -1;
 
@@ -23,6 +23,7 @@ public class SistemaPrincipal {
             System.out.println("1 - Alimentar");
             System.out.println("2 - Brincar");
             System.out.println("3 - Ver status");
+            System.out.println("4 - Testar proteção");
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
 
@@ -30,14 +31,14 @@ public class SistemaPrincipal {
 
             if (opcao == 1) {
 
-                System.out.print("Quanto deseja alimentar o " + pet.nome + "? ");
+                System.out.print("Quanto deseja alimentar o " + pet.getNome() + "? ");
                 int quantidade = scanner.nextInt();
 
                 pet.alimentar(quantidade);
 
             } else if (opcao == 2) {
 
-                System.out.print("Por quanto tempo deseja brincar com o " + pet.nome + "? ");
+                System.out.print("Por quanto tempo deseja brincar com o " + pet.getNome() + "? ");
                 int tempo = scanner.nextInt();
 
                 pet.brincar(tempo);
@@ -45,13 +46,21 @@ public class SistemaPrincipal {
             } else if (opcao == 3) {
 
                 System.out.println("\n--- STATUS ---");
-                System.out.println("Nome: " + pet.nome);
-                System.out.println("Fome: " + pet.fome);
-                System.out.println("Energia: " + pet.energia);
+                System.out.println("Nome: " + pet.getNome());
+                System.out.println("Fome: " + pet.getFome());
+                System.out.println("Energia: " + pet.getEnergia());
+
+            } else if (opcao == 4) {
+
+                System.out.println("\n--- TESTANDO PROTEÇÃO ---");
+
+                pet.setFome(-20);
+                pet.setEnergia(150);
+                pet.setNome("");
 
             } else if (opcao == 0) {
 
-                System.out.println("Até a próxima, " + pet.nome + "!");
+                System.out.println("Até a próxima, " + pet.getNome() + "!");
 
             } else {
 

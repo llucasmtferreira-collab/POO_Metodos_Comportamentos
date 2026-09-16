@@ -1,19 +1,16 @@
 # PetVirtual - Projeto Pessoal de POO
 
-O projeto começou com o objeto Garrafa. A partir desta etapa, o objeto pessoal foi alterado para `PetVirtual` para continuar a evolução nas próximas aulas.
+A classe `PetVirtual` representa um bichinho virtual inspirado em um Tamagotchi.
 
-A classe `PetVirtual` representa um bichinho virtual inspirado na ideia de um Tamagotchi.
+Nesta etapa foi aplicado encapsulamento: os atributos passaram a ser `private` e o acesso acontece por getters e setters.
 
-## Atributos
-- `nome`: nome do pet
-- `fome`: nível de fome
-- `energia`: nível de energia
+## Regras
+- o nome não pode ser vazio;
+- a fome deve ficar entre 0 e 100;
+- a energia deve ficar entre 0 e 100;
+- `alimentar` e `brincar` continuam protegendo o estado.
 
-## Métodos
-- `alimentar(int quantidade)`: diminui a fome e impede valores inválidos.
-- `brincar(int tempo)`: diminui a energia e aumenta a fome, mantendo os valores válidos.
-
-## Testes
-O programa principal executa testes válidos e inválidos para verificar as regras dos métodos.
+## Teste
+`TestePetVirtual.java` testa o uso normal e também tenta informar valores inválidos.
 
 Autor: Lucas Mota - RM566670
