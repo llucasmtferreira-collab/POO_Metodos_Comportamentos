@@ -2,6 +2,7 @@ package br.com.fiapride.main;
 
 import java.util.Scanner;
 import br.com.fiapride.model.PetVirtual;
+import br.com.fiapride.model.Tutor;
 
 public class SistemaPrincipal {
 
@@ -9,7 +10,8 @@ public class SistemaPrincipal {
 
         Scanner scanner = new Scanner(System.in);
 
-        PetVirtual pet = new PetVirtual("Pixel");
+        Tutor tutor = new Tutor("Lucas");
+        PetVirtual pet = new PetVirtual("Pixel", tutor);;
 
         int opcao = -1;
 
@@ -42,6 +44,7 @@ public class SistemaPrincipal {
 
                 System.out.println("\n--- STATUS ---");
                 System.out.println("Nome: " + pet.getNome());
+                System.out.println("Tutor: " + pet.getTutor().getNome());
                 System.out.println("Fome: " + pet.getFome());
                 System.out.println("Energia: " + pet.getEnergia());
 

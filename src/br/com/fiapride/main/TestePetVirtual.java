@@ -1,12 +1,14 @@
 package br.com.fiapride.main;
 
 import br.com.fiapride.model.PetVirtual;
+import br.com.fiapride.model.Tutor;
 
 public class TestePetVirtual {
 
     public static void main(String[] args) {
 
-    	PetVirtual pet = new PetVirtual("Pixel");
+    	Tutor tutor = new Tutor("Lucas");
+    	PetVirtual pet = new PetVirtual("Pixel", tutor);
 
         System.out.println("--- ESTADO INICIAL ---");
         System.out.println("Nome: " + pet.getNome());

@@ -6,18 +6,22 @@ O projeto começou com o objeto Garrafa e depois foi alterado para PetVirtual pa
 
 ## Atributos
 
+O PetVirtual possui:
+
 - `nome`
 - `fome`
 - `energia`
+- `tutor`
 
-Os atributos são `private` para proteger o estado do objeto.
+Os atributos são privados para proteger o estado do objeto.
 
 ## Construtor
 
-O PetVirtual recebe o nome no momento em que é criado:
+O PetVirtual recebe o nome e um Tutor no momento em que é criado:
 
 ```java
-PetVirtual pet = new PetVirtual("Pixel");
+Tutor tutor = new Tutor("Lucas");
+PetVirtual pet = new PetVirtual("Pixel", tutor);
 ```
 
 O pet inicia com:
@@ -45,17 +49,47 @@ Os setters controlam as alterações e impedem:
 - fome menor que 0 ou maior que 100;
 - energia menor que 0 ou maior que 100.
 
+## Associação com Tutor
+
+Foi criada a classe `Tutor`, que representa o responsável pelo PetVirtual.
+
+Cada PetVirtual possui um Tutor associado.
+
+Exemplo:
+
+```java
+Tutor tutor = new Tutor("Lucas");
+PetVirtual pet = new PetVirtual("Pixel", tutor);
+```
+
+O nome do tutor pode ser consultado com:
+
+```java
+pet.getTutor().getNome();
+```
+
 ## Sistema Principal
 
-O arquivo `SistemaPrincipal.java` possui um menu interativo:
+O `SistemaPrincipal.java` possui o menu:
 
 1. Alimentar
 2. Brincar
 3. Ver status
 0. Sair
 
+Na opção de status também é exibido o nome do tutor associado ao pet.
+
 ## Testes
 
-O arquivo `TestePetVirtual.java` testa os comportamentos do objeto e também tenta inserir valores inválidos para verificar se o encapsulamento está funcionando.
+O `TestePetVirtual.java` testa:
 
-Autor: Lucas Mota - RM566670
+- alimentação;
+- brincadeira;
+- valores inválidos;
+- proteção dos atributos.
+
+## UML
+
+O diagrama UML representa as classes `PetVirtual` e `Tutor` e a associação entre elas.
+
+**Autor:** Lucas Mota - RM566670

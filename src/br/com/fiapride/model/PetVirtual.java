@@ -5,11 +5,13 @@ public class PetVirtual {
     private String nome;
     private int fome;
     private int energia;
+    private Tutor tutor;
 
-    public PetVirtual(String nome) {
+    public PetVirtual(String nome, Tutor tutor) {
         setNome(nome);
         setFome(40);
         setEnergia(80);
+        this.tutor = tutor;
     }
 
     public void alimentar(int quantidade) {
@@ -87,5 +89,9 @@ public class PetVirtual {
         }
 
         this.energia = energia;
+    }
+
+    public Tutor getTutor() {
+        return tutor;
     }
 }
